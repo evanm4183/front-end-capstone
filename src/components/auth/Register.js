@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
 export const Register = (props) => {
-    const [customer, setCustomer] = useState({
+    const [member, setMember] = useState({
         email: "",
-        fullName: "",
-        isStaff: false
+        username: "",
+        password: ""
     })
     let navigate = useNavigate()
 
@@ -16,14 +16,13 @@ export const Register = (props) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(customer)
+            body: JSON.stringify(member)
         })
             .then(res => res.json())
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
-                    localStorage.setItem("honey_user", JSON.stringify({
+                    localStorage.setItem("localUser", JSON.stringify({
                         id: createdUser.id,
-                        staff: createdUser.isStaff
                     }))
 
                     navigate("/")
@@ -33,7 +32,7 @@ export const Register = (props) => {
 
     const handleRegister = (e) => {
         e.preventDefault()
-        return fetch(`http://localhost:8088/users?email=${customer.email}`)
+        return fetch(`http://localhost:8088/users?email=${member.email}`)
             .then(res => res.json())
             .then(response => {
                 if (response.length > 0) {
@@ -47,36 +46,33 @@ export const Register = (props) => {
             })
     }
 
-    const updateCustomer = (evt) => {
-        const copy = {...customer}
+    const updateMember = (evt) => {
+        const copy = {...member}
         copy[evt.target.id] = evt.target.value
-        setCustomer(copy)
+        setMember(copy)
     }
 
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Honey Rae Repairs</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register for Sudoku</h1>
                 <fieldset>
-                    <label htmlFor="fullName"> Full Name </label>
-                    <input onChange={updateCustomer}
-                           type="text" id="fullName" className="form-control"
-                           placeholder="Enter your name" required autoFocus />
-                </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
-                    <input onChange={updateCustomer}
+                    <input onChange={updateMember}
                         type="email" id="email" className="form-control"
                         placeholder="Email address" required />
                 </fieldset>
+                    <label htmlFor="username"> Username </label>
+                    <input onChange={updateMember}
+                           type="text" id="username" className="form-control"
+                           placeholder="Enter your name" required autoFocus />
+                </fieldset>
                 <fieldset>
-                    <input onChange={(evt) => {
-                        const copy = {...customer}
-                        copy.isStaff = evt.target.checked
-                        setCustomer(copy)
-                    }}
-                        type="checkbox" id="isStaff" />
-                    <label htmlFor="email"> I am an employee </label>
+                    <label htmlFor="password"> Password </label>
+                    <input onChange={updateMember}
+                        type="text" id="password" className="form-control"
+                        placeholder="Enter your password" required />
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Register </button>
