@@ -13,7 +13,7 @@ export const NavBar = () => {
                 <Link className="navbar__link" to="/createPuzzle">Create a Puzzle</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/userPuzzles">Your Puzzles</Link>
+                <Link className="navbar__link" to="/yourPuzzles">Your Puzzles</Link>
             </li>
             {
                 localStorage.getItem("localUser")

@@ -3,6 +3,7 @@ import { Authorized } from "./views/Authorized"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { NavBar } from "./nav/NavBar"
+import { Views } from "./views/Views"
 
 export const Sudoku = () => {
 	return <Routes>
@@ -13,7 +14,7 @@ export const Sudoku = () => {
 			<Authorized>
 				<>
                     <NavBar />
-					<div>Home page</div>
+					<Views />
 				</>
 			</Authorized>
 
