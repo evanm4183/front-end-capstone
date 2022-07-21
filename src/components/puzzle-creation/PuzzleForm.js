@@ -1,4 +1,4 @@
-export const PuzzleForm = ({boardArr, updateArr, idName}) => {
+export const PuzzleForm = ({boardArr, updateArr, idName, isSolution, updateEditedIndex}) => {
 
     const determineValue = (num) => {
         if (num === 0) {
@@ -28,13 +28,13 @@ export const PuzzleForm = ({boardArr, updateArr, idName}) => {
                             maxLength="1"
                             onChange={
                                 (e) => {
-                                    if (isNaN(e.target.value.charCodeAt(0))) {
+                                    if (isNaN(e.target.value.charCodeAt(0))) { //prevents NaN from being input in arr when backspace is used
                                         const copy = [...boardArr]
                                         copy[index] = 0
                                         updateArr(copy)
 
                                         return
-                                    } else if (invalidInput(e.target.value)) {
+                                    } else if (invalidInput(e.target.value)) { //checks to make sure the input is not anything other than 1-9 and _
                                         window.alert("Invalid Input")
                                         return
                                     }
@@ -44,6 +44,10 @@ export const PuzzleForm = ({boardArr, updateArr, idName}) => {
                                         ? copy[index] = e.target.value 
                                         : copy[index] = parseInt(e.target.value)
                                     updateArr(copy)
+
+                                    if (isSolution) {
+                                        updateEditedIndex(index)
+                                    }
                                 }
                             }
                         ></input>
