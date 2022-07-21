@@ -1,0 +1,17 @@
+.grid-container {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    margin-left: 10px;
+}
+
+.cell-input {
+    border: solid black 1px;
+    outline: none;
+    text-align: center;
+}
+
+.test {
+    border: solid black 1px;
+}
