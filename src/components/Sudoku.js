@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom"
 import { Authorized } from "./views/Authorized"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import { NavBar } from "./nav/NavBar"
+import { Views } from "./views/Views"
 
 export const Sudoku = () => {
 	return <Routes>
@@ -11,7 +13,8 @@ export const Sudoku = () => {
 		<Route path="*" element={
 			<Authorized>
 				<>
-					<div>Works</div>
+                    <NavBar />
+					<Views />
 				</>
 			</Authorized>
 
