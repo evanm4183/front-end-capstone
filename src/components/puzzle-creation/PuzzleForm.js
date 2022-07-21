@@ -14,8 +14,6 @@ export const PuzzleForm = ({boardArr, updateArr, idName}) => {
         return !validChars.includes(char.charCodeAt(0))
     }
 
-    console.log(boardArr)
-
     return (
         <article className="grid-container">
             {
@@ -23,7 +21,6 @@ export const PuzzleForm = ({boardArr, updateArr, idName}) => {
                     return (
                         <input 
                             type="text" 
-                             
                             className="cell-input" 
                             value={determineValue(cell)}
                             id={`${idName}--${index}`}
