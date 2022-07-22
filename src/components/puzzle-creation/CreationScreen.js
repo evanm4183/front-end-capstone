@@ -27,7 +27,7 @@ export const CreationScreen = () => {
                         <PuzzleForm boardArr={display} updateArr={updateDisplay} idName={"display"} />
                     </section>
                 </div>
-                <PuzzleAttributesForm />
+                <PuzzleAttributesForm solution={solution} display={display}/>
             </article>
         </>
     )
