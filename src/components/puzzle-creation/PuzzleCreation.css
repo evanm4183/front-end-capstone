@@ -43,3 +43,9 @@
     flex-direction: column;
     margin-bottom: 10px;
 }
+
+.board-footer {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}

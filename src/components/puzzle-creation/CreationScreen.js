@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { PuzzleForm } from "./PuzzleForm"
+import { PuzzleGridForm } from "./PuzzleGridForm"
 import "./PuzzleCreation.css"
 import { PuzzleAttributesForm } from "./PuzzleAttributesForm"
 
@@ -20,11 +20,12 @@ export const CreationScreen = () => {
                 <div className="puzzle-grids-container">
                     <section className="puzzle-form-container">
                         <h3 className="grid-title">Solution</h3>
-                        <PuzzleForm boardArr={solution} updateArr={updateSolution} idName={"solution"} isSolution={true} updateEditedIndex={updateEditedIndex}/>
+                        <PuzzleGridForm boardArr={solution} updateArr={updateSolution} idName={"solution"} isSolution={true} updateEditedIndex={updateEditedIndex}/>
                     </section>
                     <section className="puzzle-form-container">
                         <h3 className="grid-title">Solver's View</h3>
-                        <PuzzleForm boardArr={display} updateArr={updateDisplay} idName={"display"} />
+                        <PuzzleGridForm boardArr={display} updateArr={updateDisplay} idName={"display"} />
+                        <footer className="board-footer"><em>Input underscores to represent hidden squares</em></footer>
                     </section>
                 </div>
                 <PuzzleAttributesForm solution={solution} display={display}/>
