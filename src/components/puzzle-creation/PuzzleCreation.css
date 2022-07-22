@@ -1,7 +1,13 @@
-.puzzle-screen-container {
+.puzzle-grids-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.puzzle-form-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-container {
@@ -12,12 +18,26 @@
     margin-left: 10px;
 }
 
+.grid-title {
+    display: flex;
+    justify-content: center;
+}
+
 .cell-input {
     border: solid black 1px;
     outline: none;
     text-align: center;
 }
 
-.test {
-    border: solid black 1px;
+.form-container {
+    width: 500px;
+    border: solid black 3px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
