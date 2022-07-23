@@ -12,8 +12,8 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(9, 40px);
-    grid-template-rows: repeat(9, 40px);
+    grid-template-columns: 40px 40px 43px 40px 40px 43px 40px 40px 40px;
+    grid-template-rows: 40px 40px 43px 40px 40px 43px 40px 40px 40px;
     border: solid black 4px;
     background-color: black;
 }
