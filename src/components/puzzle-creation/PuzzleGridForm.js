@@ -8,6 +8,18 @@ export const PuzzleGridForm = ({boardArr, updateArr, idName, isSolution, updateE
         return num
     }
 
+    const determineClass = (index) => {
+        if ((index % 9 === 2 || index % 9 === 5) && ((index >= 18 && index <= 26) || (index >= 45 && index <= 53))) {
+            return "corner-cell"
+        } else if (index % 9 === 2 || index % 9 === 5) {
+            return "side-border-cell"
+        } else if ((index >= 18 && index <= 26) || (index >= 45 && index <= 53)) {
+            return "bottom-border-cell"
+        }
+
+        return "regular-cell"
+    }
+
     const invalidInput = (char) => {
         const validChars = [49, 50, 51, 52, 53, 54, 55, 56, 57, 95]
 
@@ -21,7 +33,7 @@ export const PuzzleGridForm = ({boardArr, updateArr, idName, isSolution, updateE
                     return (
                         <input 
                             type="text" 
-                            className="cell-input" 
+                            className={determineClass(index)} 
                             value={determineValue(cell)}
                             id={`${idName}--${index}`}
                             key={index}

@@ -12,11 +12,42 @@
 
 .grid-container {
     display: grid;
-    grid-gap: 0;
     grid-template-columns: repeat(9, 40px);
     grid-template-rows: repeat(9, 40px);
-    margin-left: 10px;
-    border: solid black 2px;
+    border: solid black 4px;
+    background-color: black;
+}
+
+.regular-cell {
+    padding: 0;
+    outline: none;
+    text-align: center;
+    border: solid black 1px;
+}
+
+.side-border-cell {
+    padding: 0;
+    outline: none;
+    text-align: center;
+    margin-right: 3px;
+    border: solid black 1px;
+}
+
+.bottom-border-cell {
+    padding: 0;
+    outline: none;
+    text-align: center;
+    margin-bottom: 3px;
+    border: solid black 1px;
+}
+
+.corner-cell {
+    padding: 0;
+    outline: none;
+    text-align: center;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
 }
 
 .grid-title {
@@ -24,11 +55,7 @@
     justify-content: center;
 }
 
-.cell-input {
-    border: solid black 1px;
-    outline: none;
-    text-align: center;
-}
+
 
 .form-container {
     width: 500px;
