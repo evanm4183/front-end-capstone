@@ -43,6 +43,7 @@ export const PuzzleGridForm = ({boardArr, updateArr, idName, isSolution, updateE
                             key={index}
                             maxLength="1"
                             autoComplete="off"
+                            onClick={e => {e.target.select()}}
                             onChange={
                                 (e) => {
                                     if (isNaN(e.target.value.charCodeAt(0))) { //prevents NaN from being input in arr when backspace is used
