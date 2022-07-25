@@ -1,4 +1,4 @@
-export const determineClass = (index) => {
+const determineClass = (index) => {
     if ((index % 9 === 2 || index % 9 === 5) && ((index >= 18 && index <= 26) || (index >= 45 && index <= 53))) {
         return "corner-cell"
     } else if (index % 9 === 2 || index % 9 === 5) {
@@ -10,25 +10,25 @@ export const determineClass = (index) => {
     return "regular-cell"
 }
 
+const determineValue = (num) => {
+    if (num === 0) {
+        return ""
+    }
+        
+    return num
+}
+
+const validInput = (char, isSolution) => {
+    const asciiVal = char.charCodeAt(0)
+
+    if (isSolution) {
+        return (asciiVal >= 49 && asciiVal <= 57) 
+    }
+
+    return (asciiVal >= 49 && asciiVal <= 57) || asciiVal === 95
+}
+
 export const PuzzleGridForm = ({boardArr, updateArr, idName, isSolution, updateEditedIndex}) => {
-
-    const determineValue = (num) => {
-        if (num === 0) {
-            return ""
-        }
-            
-        return num
-    }
-
-    const validInput = (char) => {
-        const asciiVal = char.charCodeAt(0)
-
-        if (isSolution) {
-            return (asciiVal >= 49 && asciiVal <= 57) 
-        }
-
-        return (asciiVal >= 49 && asciiVal <= 57) || asciiVal === 95
-    }
 
     return (
         <article className="grid-container">
@@ -52,7 +52,7 @@ export const PuzzleGridForm = ({boardArr, updateArr, idName, isSolution, updateE
                                         updateArr(copy)
 
                                         return
-                                    } else if (!validInput(e.target.value)) { //checks to make sure the input is not anything other than 1-9 and _
+                                    } else if (!validInput(e.target.value, isSolution)) { //checks to make sure the input is not anything other than 1-9 and _
                                         window.alert("Invalid Input")
                                         return
                                     }
