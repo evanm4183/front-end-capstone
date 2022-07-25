@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 export const PuzzleAttributesForm = ({solution, display}) => {
     const user = JSON.parse(localStorage.getItem("localUser"))
-    console.log(user)
+
     const [difficulties, setDifficulties] = useState([])
     const [puzzle, updatePuzzle] = useState({
         solution: solution,
