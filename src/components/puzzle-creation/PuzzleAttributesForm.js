@@ -8,7 +8,7 @@ export const PuzzleAttributesForm = ({solution, display}) => {
     const [puzzle, updatePuzzle] = useState({
         solution: solution,
         display: display, 
-        creatorId: user.id,
+        userId: user.id,
         title: "",
         description: "",
         difficultyId: 0,

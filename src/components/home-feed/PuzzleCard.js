@@ -1,20 +1,6 @@
 import { MiniBoard } from "./MiniBoard"
 
-const getAuthorName = (id, users) => {
-    if (users.length !== 0) {
-        const author = users?.find(user => user.id === id)
-        return author.username
-    }
-}
-
-const getDifficultyName = (id, difficulties) => {
-    if (difficulties.length !== 0) {
-        const difficulty = difficulties?.find(diff => diff.id === id)
-        return difficulty.name
-    }
-}
-
-export const PuzzleCard = ({puzzle, users, difficulties}) => {
+export const PuzzleCard = ({puzzle}) => {
 
     return (
         <article>
@@ -27,11 +13,11 @@ export const PuzzleCard = ({puzzle, users, difficulties}) => {
                     </div>
                     <div className="author-container">
                         <h4 className="puzzle-header">Author:</h4>
-                        <div><em>{getAuthorName(puzzle.creatorId, users)}</em></div>
+                        <div><em>{puzzle.user.username}</em></div>
                     </div>
                     <div className="difficulty">
                         <h4 className="puzzle-header">Difficulty:</h4>
-                        <div><em>{getDifficultyName(puzzle.difficultyId, difficulties)}</em></div>
+                        <div><em>{puzzle.difficulty.name}</em></div>
                     </div>
                 </div>
                 <div className="likes-container"> {/*Need to implement once Likes system gets made*/}

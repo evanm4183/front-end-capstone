@@ -9,20 +9,10 @@ export const HomeFeed = () => {
     const [difficulties, setDifficulties] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:8088/completePuzzles`)
+        fetch(`http://localhost:8088/completePuzzles?_expand=user&_expand=difficulty`)
         .then(response => response.json())
         .then(data => {
             setPuzzles(data)
-            return fetch(`http://localhost:8088/users`)
-        })
-        .then(response => response.json())
-        .then(data => {
-            setUsers(data)
-            return fetch(`http://localhost:8088/difficulties`)
-        })
-        .then(response => response.json())
-        .then(data => {
-            setDifficulties(data)
         })
     }, [])
 
@@ -34,8 +24,6 @@ export const HomeFeed = () => {
                     puzzles.map(puzzle => {
                         return <PuzzleCard 
                             puzzle={puzzle} 
-                            users={users} 
-                            difficulties= {difficulties}
                             key={puzzle.id}
                         />
                     })
