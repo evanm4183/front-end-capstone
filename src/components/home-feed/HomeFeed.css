@@ -1,3 +1,4 @@
+/* grid css */
 .mini-grid-container {
     display: grid;
     grid-template-columns: 20px 20px 23px 20px 20px 23px 20px 20px 20px;
@@ -47,14 +48,16 @@
     background-color: white;
     font-size: 17px;
 }
+/* grid css */
 
+/* individual card css */
 .card-container {
     display: flex;
     flex-direction: row;
     border: solid black 2px;
     border-radius: 10px;
-    margin-left: 4%;
-    width: 550px
+    width: 550px;
+    margin-bottom: 20px
 }
 
 .description-container {
@@ -64,7 +67,7 @@
     
     width: 200px;
     height: 186px;
-    margin: 15px 30px 15px 35px;
+    margin: 15px 25px 15px 35px;
 }
 
 .puzzle-title-container {
@@ -91,4 +94,14 @@
     justify-content: space-around;
     width: 200px;
     margin: 10px 0 10px 15px;
+}
+/* individual card css */
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 4%;
+    margin-right: 4%;
 }

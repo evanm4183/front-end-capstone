@@ -10,14 +10,22 @@ const determineClass = (index) => {
     return "regular-cell-mini"
 }
 
+const showCell = (value) => {
+    if (value === "_" || value === 0) {
+        return ""
+    }
+
+    return value 
+}
+
 export const MiniBoard = ({puzzle}) => {
     
     return (
         <article className="mini-grid-container">
             {
-                puzzle?.solution.map((cell, index) => {
+                puzzle?.display.map((cell, index) => {
                     return (
-                        <div className={determineClass(index)} key={index}>{index}</div>
+                        <div className={determineClass(index)} key={index}>{showCell(cell)}</div>
                     )
                 })
             }
