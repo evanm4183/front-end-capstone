@@ -1,0 +1,107 @@
+/* grid css */
+.mini-grid-container {
+    display: grid;
+    grid-template-columns: 20px 20px 23px 20px 20px 23px 20px 20px 20px;
+    grid-template-rows: 20px 20px 23px 20px 20px 23px 20px 20px 20px;
+    border: solid black 3px;
+    background-color: black;
+    margin: 15px;
+    width: 186px;
+}
+
+.regular-cell-mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 17px;
+}
+
+.side-border-cell-mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 17px;
+}
+
+.bottom-border-cell-mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 17px;
+}
+
+.corner-cell-mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 17px;
+}
+/* grid css */
+
+/* individual card css */
+.card-container {
+    display: flex;
+    flex-direction: row;
+    border: solid black 2px;
+    border-radius: 10px;
+    width: 550px;
+    margin-bottom: 20px
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 200px;
+    height: 186px;
+    margin: 15px 25px 15px 35px;
+}
+
+.puzzle-title-container {
+    display: flex;
+    flex-direction: column;
+}
+.puzzle-header {
+    margin: 0;
+}
+
+.author-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.difficulty {
+    display: flex;
+    flex-direction: column;
+}
+
+.likes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 200px;
+    margin: 10px 0 10px 15px;
+}
+/* individual card css */
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 4%;
+    margin-right: 4%;
+}

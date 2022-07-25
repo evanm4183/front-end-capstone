@@ -19,14 +19,12 @@
 }
 
 .regular-cell {
-    padding: 0;
     outline: none;
     text-align: center;
     border: solid black 1px;
 }
 
 .side-border-cell {
-    padding: 0;
     outline: none;
     text-align: center;
     margin-right: 3px;
@@ -34,7 +32,6 @@
 }
 
 .bottom-border-cell {
-    padding: 0;
     outline: none;
     text-align: center;
     margin-bottom: 3px;
@@ -42,7 +39,6 @@
 }
 
 .corner-cell {
-    padding: 0;
     outline: none;
     text-align: center;
     margin-right: 3px;
@@ -54,8 +50,6 @@
     display: flex;
     justify-content: center;
 }
-
-
 
 .form-container {
     width: 500px;
