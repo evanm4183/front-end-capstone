@@ -78,7 +78,7 @@ export const PuzzleAttributesForm = ({solution, display}) => {
                         }, 
                         body: JSON.stringify(puzzle)
                     })
-                    .then(() => {navigate("/")})
+                    .then(() => {navigate("/yourPuzzles")})
                 }
             }>Save and Complete</button>
         </article>
