@@ -1,6 +1,6 @@
-import { MiniBoard } from "./MiniBoard"
+import { MiniBoard } from "../home-feed/MiniBoard"
 
-export const PuzzleCard = ({puzzle}) => {
+export const YourPuzzlesCard = ({puzzle, getYourPuzzles}) => {
 
     return (
         <article>
@@ -23,6 +23,17 @@ export const PuzzleCard = ({puzzle}) => {
                 <div className="likes-container"> {/*Need to implement once Likes system gets made*/}
                     <div><strong>Likes:</strong> 500</div>
                     <div><strong>Dislikes:</strong> 500</div>
+                    <button 
+                        className="delete-button" 
+                        id={`delete--${puzzle.id}`}
+                        onClick={(e) => {
+                            const [,puzzleId] = e.target.id.split("--")
+                            fetch(`http://localhost:8088/completePuzzles/${puzzleId}`, {
+                                method: "DELETE"
+                            })
+                            .then(() => {getYourPuzzles()})
+                        }}
+                    >Delete</button>
                 </div>
             </div>
         </article>
