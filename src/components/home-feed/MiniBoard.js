@@ -23,7 +23,7 @@ export const MiniBoard = ({puzzle}) => {
     return (
         <article className="mini-grid-container">
             {
-                puzzle?.display.map((cell, index) => {
+                puzzle.display.map((cell, index) => {
                     return (
                         <div className={determineClass(index)} key={index}>{showCell(cell)}</div>
                     )
