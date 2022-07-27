@@ -1,4 +1,5 @@
 import { MiniBoard } from "../home-feed/MiniBoard"
+import { Link } from "react-router-dom"
 
 export const YourPuzzlesCard = ({puzzle, getYourPuzzles}) => {
 
@@ -9,7 +10,7 @@ export const YourPuzzlesCard = ({puzzle, getYourPuzzles}) => {
                 <div className="description-container">
                     <div className="puzzle-title-container">
                         <h4 className="puzzle-header">Title:</h4>
-                        <div><em>{puzzle.title}</em></div>
+                        <div><Link to={`/puzzles/${puzzle.id}`}>{puzzle.title}</Link></div>
                     </div>
                     <div className="author-container">
                         <h4 className="puzzle-header">Author:</h4>
