@@ -19,10 +19,6 @@ export const YourPuzzlesFeed = () => {
         getYourPuzzles()
     }, [])
 
-    useEffect(() => {
-        getYourPuzzles()
-    }, [])
-
     return (
         <div className="feed-container">
             <h1>Your Puzzles</h1>

@@ -4,6 +4,7 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { NavBar } from "./nav/NavBar"
 import { Views } from "./views/Views"
+import { PrintScreen } from "./print-screen/PrintScreen"
 
 export const Sudoku = () => {
 	return <Routes>
@@ -19,5 +20,7 @@ export const Sudoku = () => {
 			</Authorized>
 
 		} />
+
+		<Route path="print/:puzzleId" element={<PrintScreen />} />
 	</Routes>
 }
