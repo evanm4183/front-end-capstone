@@ -1,7 +1,31 @@
 import { MiniBoard } from "../home-feed/MiniBoard"
 import { Link } from "react-router-dom"
 
-export const YourPuzzlesCard = ({puzzle, getYourPuzzles}) => {
+const countLikes = (likes, puzzleId) => {
+    let count = 0
+
+    for (const like of likes) {
+        if (like.completePuzzleId === puzzleId) {
+            count++
+        }
+    }
+
+    return count
+}
+
+const countDislikes = (dislikes, puzzleId) => {
+    let count = 0
+
+    for (const dislike of dislikes) {
+        if (dislike.completePuzzleId === puzzleId) {
+            count++
+        }
+    }
+
+    return count
+}
+
+export const YourPuzzlesCard = ({puzzle, getYourPuzzles, likes, dislikes}) => {
 
     return (
         <article>
@@ -22,8 +46,8 @@ export const YourPuzzlesCard = ({puzzle, getYourPuzzles}) => {
                     </div>
                 </div>
                 <div className="likes-container"> {/*Need to implement once Likes system gets made*/}
-                    <div><strong>Likes:</strong> 500</div>
-                    <div><strong>Dislikes:</strong> 500</div>
+                    <div><strong>Likes: </strong>{countLikes(likes, puzzle.id)}</div>
+                    <div><strong>Dislikes: </strong>{countDislikes(dislikes, puzzle.id)}</div>
                     <button 
                         className="delete-button" 
                         id={`delete--${puzzle.id}`}
