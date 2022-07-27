@@ -5,12 +5,26 @@ import "./Feed.css"
 
 export const HomeFeed = () => {
     const [puzzles, setPuzzles] = useState([])
+    const [likes, setLikes] = useState([])
+    const [dislikes, setDislikes] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:8088/completePuzzles?_expand=user&_expand=difficulty`)
         .then(response => response.json())
         .then(data => {
             setPuzzles(data)
+        })
+
+        fetch(`http://localhost:8088/likes`)
+        .then(response => response.json())
+        .then(data => {
+            setLikes(data)
+        })
+
+        fetch(`http://localhost:8088/dislikes`)
+        .then(response => response.json())
+        .then(data => {
+            setDislikes(data)
         })
     }, [])
 
@@ -21,7 +35,9 @@ export const HomeFeed = () => {
                 {
                     puzzles.map(puzzle => {
                         return <PuzzleCard 
-                            puzzle={puzzle} 
+                            puzzle={puzzle}
+                            likes={likes}
+                            dislikes={dislikes} 
                             key={puzzle.id}
                         />
                     })

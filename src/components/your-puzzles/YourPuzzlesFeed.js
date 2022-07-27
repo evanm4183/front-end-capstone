@@ -5,6 +5,9 @@ import "../home-feed/Feed.css"
 
 export const YourPuzzlesFeed = () => {
     const [puzzles, setPuzzles] = useState([])
+    const [likes, setLikes] = useState([])
+    const [dislikes, setDislikes] = useState([])
+
     const localUserId = JSON.parse(localStorage.getItem("localUser")).id
 
     const getYourPuzzles = () => {
@@ -17,6 +20,18 @@ export const YourPuzzlesFeed = () => {
 
     useEffect(() => {
         getYourPuzzles()
+        
+        fetch(`http://localhost:8088/likes`)
+        .then(response => response.json())
+        .then(data => {
+            setLikes(data)
+        })
+
+        fetch(`http://localhost:8088/dislikes`)
+        .then(response => response.json())
+        .then(data => {
+            setDislikes(data)
+        })
     }, [])
 
     return (
@@ -28,6 +43,8 @@ export const YourPuzzlesFeed = () => {
                         return <YourPuzzlesCard 
                             puzzle={puzzle} 
                             getYourPuzzles={getYourPuzzles}
+                            likes={likes}
+                            dislikes={dislikes}
                             key={puzzle.id}
                         />
                     })
