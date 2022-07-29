@@ -64,7 +64,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
     width: 200px;
     height: 186px;
     margin: 15px 25px 15px 35px;
@@ -108,4 +107,40 @@
 
 .delete-button {
     width: 90px;
+}
+
+/* filter bar css */
+.filter-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid black 2px;
+    border-radius: 10px;
+    margin: 30px auto 20px auto;
+    height: 35px;
+    width: 950px;
+}
+
+.filter-group-left {
+    margin-left: 10px;
+}
+
+.filter-group-right {
+    margin-right: 10px;
+}
+
+.filter-labels {
+    margin-right: 5px;
+}
+
+/*search bar css*/
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+    border-radius: 10px;
+    margin: 30px auto 20px auto;
+    height: 35px;
+    width: 375px;
 }
