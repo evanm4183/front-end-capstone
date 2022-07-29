@@ -19,7 +19,7 @@ export const resetAvailableNumbers = () => {
 }
 
 export const convertToArray = (availableNumbers) => { 
-    let availableNumsArray = [] //might be an issue
+    let availableNumsArray = [] 
 
     for (let i = 1; i < 10; i++) {
         if (availableNumbers[i]) {

@@ -13,7 +13,7 @@ const getBoundary = (index) => { //returns the boundary of the block for a given
 }
 
 const filterNumbersByBlock = (board, availableNumbers, verticalBoundary, horizontalBoundary) => { //eliminates the number in the same block and returns an availableNumbers object
-    let currentCoord = [verticalBoundary[0], horizontalBoundary[0]] //startCoord should be an array in the form [rowNum, rowIndex] (might be issue)
+    let currentCoord = [verticalBoundary[0], horizontalBoundary[0]] //startCoord should be an array in the form [rowNum, rowIndex]
 
     while (currentCoord[0] <= verticalBoundary[1] && currentCoord[1] <= horizontalBoundary[1]) {
         if (board[currentCoord[0]][currentCoord[1]] !== 0) { //checks if the coord has a non-zero number, if it does that number is marked as unavailable
