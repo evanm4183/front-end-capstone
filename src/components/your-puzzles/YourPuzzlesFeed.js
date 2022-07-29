@@ -1,12 +1,22 @@
 import { useState, useEffect } from "react"
 import { YourPuzzlesCard } from "./YourPuzzlesCard"
+import { SearchBar } from "./SearchBar"
 import "../home-feed/Feed.css"
 
+const filterByTitle = (searchTerm, puzzleArr) => { 
+    const filteredPuzzles = puzzleArr.filter(puzzle => 
+        puzzle.title.toLowerCase().startsWith(searchTerm)
+    )
+
+    return filteredPuzzles
+}
 
 export const YourPuzzlesFeed = () => {
     const [puzzles, setPuzzles] = useState([])
+    const [filteredPuzzles, setFiltered] = useState([])
     const [likes, setLikes] = useState([])
     const [dislikes, setDislikes] = useState([])
+    const [titleSearch, setTitleSearch] = useState("")
 
     const localUserId = JSON.parse(localStorage.getItem("localUser")).id
 
@@ -15,6 +25,7 @@ export const YourPuzzlesFeed = () => {
         .then(response => response.json())
         .then(data => {
             setPuzzles(data)
+            setFiltered(data)
         })
     }
 
@@ -34,20 +45,31 @@ export const YourPuzzlesFeed = () => {
         })
     }, [])
 
+    useEffect(() => {
+        if (!titleSearch) {
+            setFiltered(puzzles)
+        } else {
+            setFiltered(filterByTitle(titleSearch, puzzles))
+        }
+
+    }, [titleSearch])
+
     return (
         <div className="feed-container">
-            <h1>Your Puzzles</h1>
+            <SearchBar setTitleSearch={setTitleSearch} />
             <div className="cards-container">
                 {
-                    puzzles.map(puzzle => {
-                        return <YourPuzzlesCard 
-                            puzzle={puzzle} 
-                            getYourPuzzles={getYourPuzzles}
-                            likes={likes}
-                            dislikes={dislikes}
-                            key={puzzle.id}
-                        />
-                    })
+                    filteredPuzzles.length > 0
+                        ? filteredPuzzles.map(puzzle => {
+                            return <YourPuzzlesCard 
+                                puzzle={puzzle} 
+                                getYourPuzzles={getYourPuzzles}
+                                likes={likes}
+                                dislikes={dislikes}
+                                key={puzzle.id}
+                            />
+                        })
+                        : <h1>No Puzzles Found...</h1>
                 }
             </div>
         </div>
