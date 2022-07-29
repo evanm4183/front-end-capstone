@@ -74,3 +74,8 @@
     justify-content: center;
     font-size: 14px;
 }
+
+.template-button {
+    margin: 5px auto 0 auto;
+    width: auto;
+}

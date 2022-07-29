@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { PuzzleGridForm } from "./PuzzleGridForm"
 import "./PuzzleCreation.css"
 import { PuzzleAttributesForm } from "./PuzzleAttributesForm"
+import { generateSolution } from "../../solution-generator/solutionGenerator"
 
 export const CreationScreen = () => {
     const [solution, updateSolution] = useState(Array(81).fill(0))
@@ -21,6 +22,14 @@ export const CreationScreen = () => {
                     <section className="puzzle-form-container">
                         <h3 className="grid-title">Solution</h3>
                         <PuzzleGridForm boardArr={solution} updateArr={updateSolution} idName={"solution"} isSolution={true} updateEditedIndex={updateEditedIndex}/>
+                        <button 
+                            className="template-button" 
+                            onClick={() => {
+                                const template = generateSolution()
+                                updateSolution(template)
+                                updateDisplay(template)
+                            }}
+                        >Generate Template</button>
                     </section>
                     <section className="puzzle-form-container">
                         <h3 className="grid-title">Solver's View</h3>
