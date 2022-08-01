@@ -1,0 +1,171 @@
+.regular-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+    outline: none;
+    caret-color: transparent;
+    color: black;
+}
+
+.side-border-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+}
+
+.bottom-border-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+}
+
+.corner-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+}
+
+/*Notes Cells*/
+.regular-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid black 1px;
+    background-color: white;
+}
+
+.side-border-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: white;
+}
+
+.bottom-border-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+}
+
+.corner-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+}
+
+.sub-cell-notes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    width: 18px;
+    font-size: 16px;
+}
+/*Notes Cells*/
+
+/*Hover Versions*/
+.regular-cell-uneditable:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    background-color: lightskyblue;
+    font-size: 40px;
+}
+
+.side-border-cell-uneditable:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: lightskyblue;
+    font-size: 40px;
+}
+
+.bottom-border-cell-uneditable:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: lightskyblue;
+    font-size: 40px;
+}
+
+.corner-cell-uneditable:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: lightskyblue;
+    font-size: 40px;
+}
+/*Hover Versions*/
+
+.notes-grid-container {
+    display: grid;
+    grid-template-columns: 57px 57px 60px 57px 57px 60px 57px 57px 57px;
+    grid-template-rows: 57px 57px 60px 57px 57px 60px 57px 57px 57px;
+    border: solid black 4px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.big-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: solid black 2px;
+    height: 96px;
+    width: 96px;
+}
+
+.a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid gray 1px;
+    height: 30px;
+    width: 30px;
+    outline: none;
+    margin: 0 0 0 0;
+}
+
+.b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid gray 1px;
+    height: 30px;
+    width: 30px;
+    outline: none;
+    margin: -32px 0 0 0;
+}

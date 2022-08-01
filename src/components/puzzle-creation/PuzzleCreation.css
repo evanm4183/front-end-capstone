@@ -16,6 +16,7 @@
     grid-template-rows: 40px 40px 43px 40px 40px 43px 40px 40px 40px;
     border: solid black 4px;
     background-color: black;
+    cursor: pointer;
 }
 
 .regular-cell {
@@ -23,6 +24,8 @@
     text-align: center;
     border: solid black 1px;
     font-size: 32px;
+    caret-color: transparent;
+    cursor: pointer;
 }
 
 .side-border-cell {
@@ -31,6 +34,8 @@
     margin-right: 3px;
     border: solid black 1px;
     font-size: 32px;
+    caret-color: transparent;
+    cursor: pointer;
 }
 
 .bottom-border-cell {
@@ -39,6 +44,8 @@
     margin-bottom: 3px;
     border: solid black 1px;
     font-size: 32px;
+    caret-color: transparent;
+    cursor: pointer;
 }
 
 .corner-cell {
@@ -48,6 +55,8 @@
     margin-bottom: 3px;
     border: solid black 1px;
     font-size: 32px;
+    caret-color: transparent;
+    cursor: pointer;
 }
 
 .grid-title {
@@ -78,4 +87,54 @@
 .template-button {
     margin: 5px auto 0 auto;
     width: auto;
+}
+
+::selection {
+    color: none;
+    background: none;
+}
+
+/*Hover Versions*/
+.regular-cell:hover {
+    outline: none;
+    text-align: center;
+    border: solid black 1px;
+    font-size: 32px;
+    background-color: lightskyblue;
+    caret-color: transparent;
+    cursor: pointer;
+}
+
+.side-border-cell:hover {
+    outline: none;
+    text-align: center;
+    margin-right: 3px;
+    border: solid black 1px;
+    font-size: 32px;
+    background-color: lightskyblue;
+    caret-color: transparent;
+    cursor: pointer;
+}
+
+.bottom-border-cell:hover {
+    outline: none;
+    text-align: center;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    font-size: 32px;
+    background-color: lightskyblue;
+    caret-color: transparent;
+    cursor: pointer;
+}
+
+.corner-cell:hover {
+    outline: none;
+    text-align: center;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    font-size: 32px;
+    background-color: lightskyblue;
+    caret-color: transparent;
+    cursor: pointer;
 }
