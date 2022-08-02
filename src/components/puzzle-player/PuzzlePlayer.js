@@ -1,19 +1,38 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { PlayableBoard } from "./PlayableBoard"
+import { PlayerBoard } from "./PlayerBoard"
 import { NotesBoard } from "./NotesBoard"
+import { InputBoard } from "./InputBoard"
 import { LikeButton } from "../full-size-puzzle/LikeButton"
 import { DislikeButton } from "../full-size-puzzle/DislikeButton"
 import "../full-size-puzzle/FullSizePuzzle.css"
 import "./PuzzlePlayer.css"
 
+const make2dArray = () => {
+    let arr = []
+
+    for (let i = 0; i < 81; i++) {
+        let subArr = []
+
+        for (let j = 0; j < 9; j++) {
+            subArr.push("_")
+        }
+
+        arr.push(subArr)
+    }
+
+    return arr
+}
 
 export const PuzzlePlayer = () => {
     const {puzzleId} = useParams()
     const [puzzle, setPuzzle] = useState({})
+    const [notes, setNotes] = useState(make2dArray())
+    const [playerBoard, setPlayerBoard] = useState([])
+    const [notesToggled, setToggle] = useState(false)
     const [like, setLike] = useState([])
     const [dislike, setDislike] = useState([])
-    const [notesToggled, setToggle] = useState(false)
+    const [puzzleSolved, setPuzzleSolved] = useState(false)
 
     const userId = JSON.parse(localStorage.getItem("localUser")).id
     const likeObj = {completePuzzleId: parseInt(puzzleId), userId: userId}
@@ -36,6 +55,7 @@ export const PuzzlePlayer = () => {
         .then(response => response.json())
         .then((data) => {
             setPuzzle(data)
+            setPlayerBoard(data.display)
         })
 
         getLikeStatus()
@@ -43,8 +63,18 @@ export const PuzzlePlayer = () => {
 
     return (
         <section className="puzzle-container">
-            <NotesBoard puzzle={puzzle}/>
-            <PlayableBoard puzzle={puzzle}/>
+            <PlayerBoard playerBoard={playerBoard} puzzle={puzzle}/>
+            <NotesBoard notes={notes}/>
+            <InputBoard 
+                puzzle={puzzle}
+                notes={notes} 
+                notesToggled={notesToggled}
+                setNotes={setNotes}
+                playerBoard={playerBoard}
+                setPlayerBoard={setPlayerBoard}
+                setPuzzleSolved={setPuzzleSolved}
+            />
+
             <div className="buttons">
                 <LikeButton like={like} dislike={dislike} getLikeStatus={getLikeStatus} likeObj={likeObj}/>
                 <DislikeButton like={like} dislike={dislike} getLikeStatus={getLikeStatus} likeObj={likeObj}/>
@@ -52,15 +82,14 @@ export const PuzzlePlayer = () => {
                     notesToggled ? setToggle(false) : setToggle(true)
                 }}>{notesToggled ? "Toggle Notes (On)" : "Toggle Notes (Off)"} </button>
             </div>
+
             <div className="description-container-full">
-                <h3 className="description-title-full">Currently Playing...</h3>
+                {
+                    puzzleSolved
+                        ? <h3 className="description-title-full" style={{color: "green"}}>Puzzle Successfully Completed!</h3>
+                        : <h3 className="description-title-full">Currently Playing...</h3>
+                }
             </div>
-           <div className="big-box">
-            
-                <div className="a" >1</div>
-                <div className="b" >2</div>
-                
-           </div>
         </section>
     )
 }

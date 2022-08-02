@@ -11,35 +11,33 @@ const determineClass = (index) => {
 }
     
 const showCell = (value) => {
-    if (value === "_" || value === 0) {
+    if (value === "_") {
         return ""
     }
     
     return value 
 }
 
-export const NotesBoard = ({puzzle}) => {
+export const NotesBoard = ({notes}) => {
     return (
         <div className="notes-grid-container">
             {
-                puzzle?.display?.map((cell, index) => {
+                notes.map((cell, cellIndex) => {
                     return (
                         <div 
-                            className={determineClass(index)} 
-                            key={index}
-                            onClick = {e => {
-                                console.log("a")
-                            }}
+                            className={determineClass(cellIndex)} 
+                            key={cellIndex}
                         >
-                            <div className="sub-cell-notes">1</div>
-                            <div className="sub-cell-notes">2</div>
-                            <div className="sub-cell-notes">3</div>
-                            <div className="sub-cell-notes">4</div>
-                            <div className="sub-cell-notes">5</div>
-                            <div className="sub-cell-notes">6</div>
-                            <div className="sub-cell-notes">7</div>
-                            <div className="sub-cell-notes">8</div>
-                            <div className="sub-cell-notes">9</div>
+                            {
+                                cell.map((subCell, subCellIndex) => {
+                                    return (
+                                        <div
+                                            className="sub-cell-notes"
+                                            key={`${cellIndex}--${subCellIndex}`}
+                                        >{showCell(subCell)}</div>
+                                    )
+                                })
+                            }
                         </div>
                     )
                 })

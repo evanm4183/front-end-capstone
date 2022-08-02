@@ -1,0 +1,54 @@
+.notes-grid-container {
+    display: grid;
+    grid-template-columns: 57px 57px 60px 57px 57px 60px 57px 57px 57px;
+    grid-template-rows: 57px 57px 60px 57px 57px 60px 57px 57px 57px;
+    border: solid black 4px;
+    background-color: transparent;
+    margin-top: -527px; /*-527px*/
+    color: gray;
+}
+
+.regular-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid black 1px;
+    background-color: transparent;
+}
+
+.side-border-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+}
+
+.bottom-border-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+}
+
+.corner-cell-notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+}
+
+.sub-cell-notes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    width: 18px;
+    font-size: 16px;
+}
