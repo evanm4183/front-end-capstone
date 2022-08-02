@@ -1,0 +1,95 @@
+@import "./NotesBoard.css";
+@import "./InputBoard.css";
+
+/*bottom layer for player input css*/
+.regular-cell-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+    outline: none;
+    caret-color: transparent;
+    color: purple;
+}
+
+.side-border-cell-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+    color: purple;
+}
+
+.bottom-border-cell-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+    color: purple;
+}
+
+.corner-cell-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+    color: purple;
+}
+/*bottom layer css*/
+
+/*css for permanent numbers*/
+.regular-cell-permanent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+    outline: none;
+    caret-color: transparent;
+    color: black;
+}
+
+.side-border-cell-permanent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+}
+
+.bottom-border-cell-permanent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+}
+
+.corner-cell-permanent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 40px;
+}
+/*css for permanent numbers*/

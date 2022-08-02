@@ -3,6 +3,7 @@ import { CreationScreen } from "../puzzle-creation/CreationScreen"
 import { HomeFeed } from "../home-feed/HomeFeed"
 import { YourPuzzlesFeed } from "../your-puzzles/YourPuzzlesFeed"
 import { FullSizePuzzleScreen } from "../full-size-puzzle/FullSizePuzzleScreen"
+import { PuzzlePlayer } from "../puzzle-player/PuzzlePlayer"
 
 export const MemberViews = () => {
 
@@ -12,6 +13,7 @@ export const MemberViews = () => {
             <Route path="/createPuzzle" element={<CreationScreen />} />
             <Route path="/yourPuzzles" element={<YourPuzzlesFeed />} />
             <Route path="puzzles/:puzzleId" element={<FullSizePuzzleScreen />} />
+            <Route path="/play/:puzzleId" element={<PuzzlePlayer />} />
         </Routes>
     )
 }

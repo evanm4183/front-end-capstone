@@ -45,8 +45,9 @@ export const FullSizePuzzleScreen = () => {
             <FullSizeBoard puzzle={puzzle} />
             <div className="buttons">
                 <LikeButton like={like} dislike={dislike} getLikeStatus={getLikeStatus} likeObj={likeObj}/>
-                <button onClick={() => {navigate(`/print/${puzzleId}`)}}>Show Only Puzzle</button>
                 <DislikeButton like={like} dislike={dislike} getLikeStatus={getLikeStatus} likeObj={likeObj}/>
+                <button onClick={() => {navigate(`/play/${puzzleId}`)}}>Play Puzzle</button>
+                <button onClick={() => {navigate(`/print/${puzzleId}`)}}>Show Only Puzzle</button>
             </div>
             <div className="description-container-full">
                 <h3 className="description-title-full">Description</h3>

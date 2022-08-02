@@ -1,0 +1,163 @@
+.input-grid-container {
+    display: grid;
+    grid-template-columns: 57px 57px 60px 57px 57px 60px 57px 57px 57px;
+    grid-template-rows: 57px 57px 60px 57px 57px 60px 57px 57px 57px;
+    border: solid black 4px;
+    background-color: transparent;
+    margin-top: -527px; /*-527px*/
+    color: transparent;
+}
+
+.regular-cell-input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid black 1px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent;
+}
+
+.side-border-cell-input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent;
+}
+
+.bottom-border-cell-input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent;
+}
+
+.corner-cell-input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent;
+}
+/*editable cells*/
+
+/*uneditable css*/
+.regular-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    background-color: transparent;
+    font-size: 40px;
+    cursor: default;
+}
+
+.side-border-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+    font-size: 40px;
+    cursor: default;
+}
+
+.bottom-border-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+    font-size: 40px;
+    cursor: default;
+}
+
+.corner-cell-uneditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: transparent;
+    font-size: 40px;
+    cursor: default;
+}
+/*uneditable css*/
+
+/*Hover Versions*/
+
+.regular-cell-input:hover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid black 1px;
+    background-color: rgba(135, 206, 250, 0.2);
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent
+}
+
+.side-border-cell-input:hover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    border: solid black 1px;
+    background-color: rgba(135, 206, 250, 0.2);
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent 
+}
+
+.bottom-border-cell-input:hover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: rgba(135, 206, 250, 0.2);
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent
+}
+
+.corner-cell-input:hover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border: solid black 1px;
+    background-color: rgba(135, 206, 250, 0.2);
+    outline: none;
+    cursor: pointer;
+    caret-color: transparent;
+    color: transparent
+}
+
