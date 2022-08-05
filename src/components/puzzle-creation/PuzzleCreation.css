@@ -138,3 +138,8 @@
     caret-color: transparent;
     cursor: pointer;
 }
+
+.save-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}

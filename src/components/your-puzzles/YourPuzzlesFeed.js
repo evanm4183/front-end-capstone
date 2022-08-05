@@ -12,11 +12,13 @@ const filterByTitle = (searchTerm, puzzleArr) => {
 }
 
 export const YourPuzzlesFeed = () => {
-    const [puzzles, setPuzzles] = useState([])
+    const [completePuzzles, setCompletePuzzles] = useState([])
+    const [incompletePuzzles, setIncompletePuzzles] = useState([])
     const [filteredPuzzles, setFiltered] = useState([])
     const [likes, setLikes] = useState([])
     const [dislikes, setDislikes] = useState([])
     const [titleSearch, setTitleSearch] = useState("")
+    const [showComplete, setShowComplete] = useState(true)
 
     const localUserId = JSON.parse(localStorage.getItem("localUser")).id
 
@@ -24,8 +26,14 @@ export const YourPuzzlesFeed = () => {
         fetch(`http://localhost:8088/completePuzzles?_expand=user&_expand=difficulty&userId=${localUserId}`)
         .then(response => response.json())
         .then(data => {
-            setPuzzles(data)
+            setCompletePuzzles(data)
             setFiltered(data)
+        })
+
+        fetch(`http://localhost:8088/incompletePuzzles?_expand=user&_expand=difficulty&userId=${localUserId}`)
+        .then(response => response.json())
+        .then(data => {
+            setIncompletePuzzles(data)
         })
     }
 
@@ -47,16 +55,24 @@ export const YourPuzzlesFeed = () => {
 
     useEffect(() => {
         if (!titleSearch) {
-            setFiltered(puzzles)
+            setFiltered(completePuzzles)
         } else {
-            setFiltered(filterByTitle(titleSearch, puzzles))
+            setFiltered(filterByTitle(titleSearch, completePuzzles))
         }
 
     }, [titleSearch])
 
+    useEffect(() => {
+        if (showComplete) {
+            setFiltered(completePuzzles)
+        } else {
+            setFiltered(incompletePuzzles)
+        }
+    }, [showComplete])
+
     return (
         <div className="feed-container">
-            <SearchBar setTitleSearch={setTitleSearch} />
+            <SearchBar setTitleSearch={setTitleSearch} setShowComplete={setShowComplete}/>
             <div className="cards-container">
                 {
                     filteredPuzzles.length > 0
@@ -66,6 +82,7 @@ export const YourPuzzlesFeed = () => {
                                 getYourPuzzles={getYourPuzzles}
                                 likes={likes}
                                 dislikes={dislikes}
+                                showComplete={showComplete}
                                 key={puzzle.id}
                             />
                         })

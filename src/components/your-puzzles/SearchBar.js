@@ -1,4 +1,4 @@
-export const SearchBar = ({setTitleSearch}) => {
+export const SearchBar = ({setTitleSearch, setShowComplete}) => {
 
     return (
         <div className="search-bar-container">
@@ -11,6 +11,22 @@ export const SearchBar = ({setTitleSearch}) => {
                         setTitleSearch(e.target.value.toLowerCase())
                     }}
                 ></input>
+            </div>
+            <div className="filter-group">
+                <input type="radio" name="completion-status" id="complete" defaultChecked
+                    onChange={(e) => {
+                        setShowComplete(true)
+                    }}
+                />
+                <label htmlFor="complete">Show Complete</label>
+            </div>
+            <div className="filter-group">
+                <input type="radio" name="completion-status" id="incomplete"
+                    onChange={(e) => {
+                        setShowComplete(false)
+                    }}
+                />
+                <label htmlFor="incomplete">Show Incomplete</label>
             </div>
         </div>
     )

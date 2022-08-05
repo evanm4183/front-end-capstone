@@ -42,7 +42,7 @@ export const PuzzleCard = ({puzzle, likes, dislikes}) => {
                     </div>
                     <div className="difficulty">
                         <h4 className="puzzle-header">Difficulty:</h4>
-                        <div><em>{puzzle.difficulty.name}</em></div>
+                        <div><em>{puzzle?.difficulty?.name}</em></div>
                     </div>
                 </div>
                 <div className="likes-container"> {/*Need to implement once Likes system gets made*/}
