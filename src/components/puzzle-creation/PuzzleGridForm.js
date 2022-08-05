@@ -46,8 +46,9 @@ export const PuzzleGridForm = ({boardArr, updateArr, idName, isSolution, updateE
                             onClick={e => {e.target.select()}}
                             onChange={
                                 (e) => {
+                                    const copy = [...boardArr]
+
                                     if (isNaN(e.target.value.charCodeAt(0))) { //prevents NaN from being input in arr when backspace is used
-                                        const copy = [...boardArr]
                                         copy[index] = 0
                                         updateArr(copy)
 
@@ -57,7 +58,6 @@ export const PuzzleGridForm = ({boardArr, updateArr, idName, isSolution, updateE
                                         return
                                     }
 
-                                    const copy = [...boardArr]
                                     isNaN(e.target.value) 
                                         ? copy[index] = e.target.value 
                                         : copy[index] = parseInt(e.target.value)

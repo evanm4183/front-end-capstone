@@ -65,22 +65,38 @@ export const PuzzleAttributesForm = ({solution, display}) => {
                     }
                 </select>
             </div>
-            <button onClick={
-                e => {
-                    const copy = {...puzzle}
-                    copy.timestamp = Date.now()
-                    updatePuzzle(copy)
+            <div className="save-buttons">
+                <button onClick={
+                    e => {
+                        const copy = {...puzzle}
+                        copy.timestamp = Date.now()
 
-                    return fetch(`http://localhost:8088/completePuzzles`, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        }, 
-                        body: JSON.stringify(puzzle)
-                    })
-                    .then(() => {navigate("/yourPuzzles")})
-                }
-            }>Save and Complete</button>
+                        return fetch(`http://localhost:8088/completePuzzles`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            }, 
+                            body: JSON.stringify(copy)
+                        })
+                        .then(() => {navigate("/yourPuzzles")})
+                    }
+                }>Save as Complete</button>
+                <button onClick={
+                    e => {
+                        const copy = {...puzzle}
+                        copy.timestamp = Date.now()
+
+                        return fetch(`http://localhost:8088/incompletePuzzles`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            }, 
+                            body: JSON.stringify(copy)
+                        })
+                        .then(() => {navigate("/yourPuzzles")})
+                    }
+                }>Save as Incomplete</button>
+            </div>
         </article>
     )
 }

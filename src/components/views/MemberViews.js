@@ -4,6 +4,7 @@ import { HomeFeed } from "../home-feed/HomeFeed"
 import { YourPuzzlesFeed } from "../your-puzzles/YourPuzzlesFeed"
 import { FullSizePuzzleScreen } from "../full-size-puzzle/FullSizePuzzleScreen"
 import { PuzzlePlayer } from "../puzzle-player/PuzzlePlayer"
+import { EditScreen } from "../puzzle-edit/EditScreen"
 
 export const MemberViews = () => {
 
@@ -14,6 +15,7 @@ export const MemberViews = () => {
             <Route path="/yourPuzzles" element={<YourPuzzlesFeed />} />
             <Route path="puzzles/:puzzleId" element={<FullSizePuzzleScreen />} />
             <Route path="/play/:puzzleId" element={<PuzzlePlayer />} />
+            <Route path="/yourPuzzles/edit/:resource/:puzzleId" element={<EditScreen />} />
         </Routes>
     )
 }

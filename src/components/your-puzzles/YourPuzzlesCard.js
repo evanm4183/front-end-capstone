@@ -1,5 +1,5 @@
 import { MiniBoard } from "../home-feed/MiniBoard"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const countLikes = (likes, puzzleId) => {
     let count = 0
@@ -25,7 +25,9 @@ const countDislikes = (dislikes, puzzleId) => {
     return count
 }
 
-export const YourPuzzlesCard = ({puzzle, getYourPuzzles, likes, dislikes}) => {
+export const YourPuzzlesCard = ({puzzle, getYourPuzzles, likes, dislikes, showComplete}) => {
+    const resource = showComplete ? "completePuzzles" : "incompletePuzzles"
+    const navigate = useNavigate()
 
     return (
         <article>
@@ -34,7 +36,11 @@ export const YourPuzzlesCard = ({puzzle, getYourPuzzles, likes, dislikes}) => {
                 <div className="description-container">
                     <div className="puzzle-title-container">
                         <h4 className="puzzle-header">Title:</h4>
-                        <div><Link to={`/puzzles/${puzzle.id}`}>{puzzle.title}</Link></div>
+                        {
+                            showComplete
+                                ? <div><Link to={`/puzzles/${puzzle.id}`}>{puzzle.title}</Link></div>
+                                : <div>{puzzle.title}</div>
+                        }
                     </div>
                     <div className="author-container">
                         <h4 className="puzzle-header">Author:</h4>
@@ -42,18 +48,31 @@ export const YourPuzzlesCard = ({puzzle, getYourPuzzles, likes, dislikes}) => {
                     </div>
                     <div className="difficulty">
                         <h4 className="puzzle-header">Difficulty:</h4>
-                        <div><em>{puzzle.difficulty.name}</em></div>
+                        <div><em>{puzzle?.difficulty?.name}</em></div>
                     </div>
                 </div>
-                <div className="likes-container"> {/*Need to implement once Likes system gets made*/}
-                    <div><strong>Likes: </strong>{countLikes(likes, puzzle.id)}</div>
-                    <div><strong>Dislikes: </strong>{countDislikes(dislikes, puzzle.id)}</div>
+                <div className="likes-container"> 
+                    {
+                        showComplete
+                            ? <>
+                                <div><strong>Likes: </strong>{countLikes(likes, puzzle.id)}</div>
+                                <div><strong>Dislikes: </strong>{countDislikes(dislikes, puzzle.id)}</div>
+                            </>
+                            : ""
+                    }
+                    <button 
+                        className="delete-button"
+                        onClick={(e) => {
+                            navigate(`edit/${resource}/${puzzle.id}`)
+                        }}
+                    >Edit</button>
                     <button 
                         className="delete-button" 
                         id={`delete--${puzzle.id}`}
                         onClick={(e) => {
                             const [,puzzleId] = e.target.id.split("--")
-                            fetch(`http://localhost:8088/completePuzzles/${puzzleId}`, {
+
+                            fetch(`http://localhost:8088/${resource}/${puzzleId}`, {
                                 method: "DELETE"
                             })
                             .then(() => {getYourPuzzles()})
