@@ -23,14 +23,14 @@ export const YourPuzzlesFeed = () => {
     const localUserId = JSON.parse(localStorage.getItem("localUser")).id
 
     const getYourPuzzles = () => {
-        fetch(`http://localhost:8088/completePuzzles?_expand=user&_expand=difficulty&userId=${localUserId}`)
+        fetch(`http://localhost:8088/completePuzzles?_expand=user&_expand=difficulty&userId=${localUserId}&_sort=timestamp&_order=desc`)
         .then(response => response.json())
         .then(data => {
             setCompletePuzzles(data)
             setFiltered(data)
         })
 
-        fetch(`http://localhost:8088/incompletePuzzles?_expand=user&_expand=difficulty&userId=${localUserId}`)
+        fetch(`http://localhost:8088/incompletePuzzles?_expand=user&_expand=difficulty&userId=${localUserId}&_sort=timestamp&_order=desc`)
         .then(response => response.json())
         .then(data => {
             setIncompletePuzzles(data)

@@ -46,7 +46,7 @@ export const HomeFeed = () => {
     const userId = JSON.parse(localStorage.getItem("localUser")).id
 
     useEffect(() => {
-        fetch(`http://localhost:8088/completePuzzles?_expand=user&_expand=difficulty`)
+        fetch(`http://localhost:8088/completePuzzles?_expand=user&_expand=difficulty&_sort=timestamp&_order=desc`)
         .then(response => response.json())
         .then(data => {
             setPuzzles(data)
