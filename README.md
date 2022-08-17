@@ -1,10 +1,9 @@
 # Sudoku Source
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Purpose
 
-In the project directory, you can run:
+This app aims to connect the Sudoku community by providing a platform for Sudoku enthusiasts to create and share puzzles with other Sudoku enthusiasts.
 
 ### `npm start`
 
