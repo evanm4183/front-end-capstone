@@ -13,6 +13,7 @@ This app aims to connect the Sudoku community by providing a platform for Sudoku
 - A built-in play feature that allows users to play other users puzzles
 
 ## How to Run 
-
+1. Clone the repository with:
+   ```git clone git@github.com:evanm4183/sudoku-source.git```
 
 
