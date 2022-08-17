@@ -18,4 +18,4 @@ This app aims to connect the Sudoku community by providing a platform for Sudoku
 3. Once here, use ```npm start``` to start the client
 4. Use ```cd sudoku-source/database``` to access the directory with sample data
 5. Once here, use ```json-server database.json -p 8088 -w``` to lauch the API
-6. View the website with the login "demo@email.com" (should populate with this by default)
+6. View the website with the login ```demo@email.com``` (should populate with this by default)
