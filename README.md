@@ -23,3 +23,6 @@ This app aims to connect the Sudoku community by providing a platform for Sudoku
 ## Tech Stack
 ![image](https://user-images.githubusercontent.com/105512866/185188785-fc47dae6-c2cd-4535-abbe-353af9b437ed.png)
 ![image](https://user-images.githubusercontent.com/105512866/185188820-bf82e80b-aacb-4116-91ad-60ecbe5f2b1b.png)
+![image](https://user-images.githubusercontent.com/105512866/185188909-ce06871c-85a4-41cd-911a-84a8bccf90fe.png)
+![image](https://user-images.githubusercontent.com/105512866/185188934-3ff35b70-48f0-4a68-bfb6-f392bcd8ec4a.png)
+![image](https://user-images.githubusercontent.com/105512866/185188970-7f93ffb0-c5e2-468d-bd0f-e36dc65b47a8.png)
