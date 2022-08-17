@@ -5,7 +5,7 @@
 
 This app aims to connect the Sudoku community by providing a platform for Sudoku enthusiasts to create and share puzzles with other Sudoku enthusiasts.
 
-##Features
+## Features
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
