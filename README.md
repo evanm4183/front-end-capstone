@@ -19,3 +19,7 @@ This app aims to connect the Sudoku community by providing a platform for Sudoku
 4. Use ```cd sudoku-source/database``` to access the directory with sample data
 5. Once here, use ```json-server database.json -p 8088 -w``` to lauch the API
 6. View the website with the login ```demo@email.com``` (should populate with this by default)
+
+## Tech Stack
+![image](https://user-images.githubusercontent.com/105512866/185188785-fc47dae6-c2cd-4535-abbe-353af9b437ed.png)
+![image](https://user-images.githubusercontent.com/105512866/185188820-bf82e80b-aacb-4116-91ad-60ecbe5f2b1b.png)
