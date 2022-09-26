@@ -7,7 +7,7 @@ This app aims to connect the Sudoku community by providing a platform for Sudoku
 
 ## Features
 
-- An easy to use Sudoku puzzle creation UI
+- An easy to use Sudoku puzzle creation UI (including a puzzle template generator)
 - A puzzle feed with multiple search tools that lets users filter the feed to their specifications
 - A like/dislike system to inform users of the quality of each puzzles
 - A built-in play feature that allows users to play other users puzzles
