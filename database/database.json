@@ -78,6 +78,21 @@
       "completePuzzleId": 8,
       "userId": 5,
       "id": 9
+    },
+    {
+      "completePuzzleId": 9,
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "completePuzzleId": 7,
+      "userId": 3,
+      "id": 11
+    },
+    {
+      "completePuzzleId": 2,
+      "userId": 3,
+      "id": 12
     }
   ],
   "dislikes": [
@@ -105,6 +120,16 @@
       "completePuzzleId": 7,
       "userId": 5,
       "id": 5
+    },
+    {
+      "completePuzzleId": 8,
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "completePuzzleId": 4,
+      "userId": 3,
+      "id": 7
     }
   ],
   "completePuzzles": [
