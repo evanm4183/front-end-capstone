@@ -15,8 +15,8 @@ This app aims to connect the Sudoku community by providing a platform for Sudoku
 ## How to Run 
 1. Clone the repository with: ```git clone git@github.com:evanm4183/sudoku-source.git```
 2. Step into the root directory with: ```cd sudoku-source```
-3. Once here, use ```npm start``` to start the client
-4. Use ```cd sudoku-source/database``` to access the directory with sample data
+3. Once here, run ```npm install``` then ```npm start``` to start the client
+4. In a new terminal, use ```cd sudoku-source/database``` to access the directory with sample data
 5. Once here, use ```json-server database.json -p 8088 -w``` to lauch the API
 6. View the website with the login ```demo@email.com``` (should populate with this by default)
 
