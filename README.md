@@ -27,7 +27,7 @@ The purpose of this app is to provide a platform for Sudoku enthusiasts to creat
 ![image](https://user-images.githubusercontent.com/105512866/185188934-3ff35b70-48f0-4a68-bfb6-f392bcd8ec4a.png)
 ![image](https://user-images.githubusercontent.com/105512866/185188970-7f93ffb0-c5e2-468d-bd0f-e36dc65b47a8.png)
 
-##Views
+## Views
 
-###Home Page
+### Home Page
 ![Home Page](./sudoku-source/photos/HomeFeed.png)
