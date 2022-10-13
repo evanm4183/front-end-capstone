@@ -35,3 +35,11 @@ The purpose of this app is to provide a platform for Sudoku enthusiasts to creat
 ### Puzzle View
 The view when the user clicks on one of the puzzle cards on the home page
 ![Puzzle View](./photos/PuzzleView.png)
+
+### Play Feature
+An example of what a puzzle in the process of being solved might look like when using the play feature
+![Play Feature](./photos/PlayFeature.png)
+
+### Puzzle Maker
+The puzzle maker UI used to create puzzles. Underscores represent what will be an empty cell
+![Puzzle Maker](./photos/PuzzleMaker.png)
