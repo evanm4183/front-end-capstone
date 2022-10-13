@@ -31,3 +31,7 @@ The purpose of this app is to provide a platform for Sudoku enthusiasts to creat
 
 ### Home Page
 ![Home Page](./photos/HomeFeed.png)
+
+### Puzzle View
+The view when the user clicks on one of the puzzle cards on the home page
+![Puzzle View](./photos/PuzzleView.png)
