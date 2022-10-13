@@ -3,7 +3,7 @@
 
 ## Purpose
 
-This app aims to connect the Sudoku community by providing a platform for Sudoku enthusiasts to create and share puzzles with other Sudoku enthusiasts.
+The purpose of this app is to provide a platform for Sudoku enthusiasts to create and share puzzles with other Sudoku enthusiasts.
 
 ## Features
 
@@ -26,3 +26,7 @@ This app aims to connect the Sudoku community by providing a platform for Sudoku
 ![image](https://user-images.githubusercontent.com/105512866/185188909-ce06871c-85a4-41cd-911a-84a8bccf90fe.png)
 ![image](https://user-images.githubusercontent.com/105512866/185188934-3ff35b70-48f0-4a68-bfb6-f392bcd8ec4a.png)
 ![image](https://user-images.githubusercontent.com/105512866/185188970-7f93ffb0-c5e2-468d-bd0f-e36dc65b47a8.png)
+
+##Views
+###Home Page
+![Home Page](./sudoku-source/photos/HomeFeed.png)
