@@ -3,7 +3,7 @@
 
 ## Purpose
 
-The purpose of this app is to provide a platform for Sudoku enthusiasts to create and share puzzles with other Sudoku enthusiasts.
+The goal of this website is to provide a platform for Sudoku enthusiasts to create and share puzzles with other Sudoku enthusiasts.
 
 ## Features
 
