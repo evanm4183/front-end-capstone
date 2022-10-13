@@ -30,4 +30,4 @@ The purpose of this app is to provide a platform for Sudoku enthusiasts to creat
 ## Views
 
 ### Home Page
-![Home Page](./sudoku-source/photos/HomeFeed.png)
+![Home Page](./photos/HomeFeed.png)
